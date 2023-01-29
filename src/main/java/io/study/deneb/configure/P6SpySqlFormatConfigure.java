@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 
 
 @Configuration
-public class P6SpySqlPostProcessor implements InitializingBean {
+public class P6SpySqlFormatConfigure implements InitializingBean {
 
   @Override
   public void afterPropertiesSet() throws Exception {
@@ -69,15 +69,16 @@ public class P6SpySqlPostProcessor implements InitializingBean {
   }
 
   private static String stackTraceInfo() {
-    Queue<String> callStack = new LinkedList<>();
+    Queue<String> call = new LinkedList<>();
+
     Stream.of(new Throwable().getStackTrace())
       .map(StackTraceElement::toString)
       .filter(trace -> trace.contains(P6SpySqlFormatter.THIS_PACKAGE) && !trace.contains("P6SpySqlPostProcessor"))
-      .forEach(callStack::add);
+      .forEach(call::add);
 
     StringBuilder callStackBuilder = new StringBuilder();
-    while (!callStack.isEmpty()) {
-      callStackBuilder.append(MessageFormat.format("{0}\t {1}", "\n", callStack.poll()));
+    while (!call.isEmpty()) {
+      callStackBuilder.append(MessageFormat.format("{0}\t {1}", "\n", call.poll()));
     }
     return callStackBuilder.toString();
   }
