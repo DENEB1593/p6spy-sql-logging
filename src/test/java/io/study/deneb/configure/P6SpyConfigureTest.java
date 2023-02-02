@@ -29,7 +29,6 @@ class P6SpyConfigureTest {
   void P6SpyConfigureLoaded() {
     P6SpySqlFormatConfigure p6SpySqlFormatConfigure = context.getBean(P6SpySqlFormatConfigure.class);
     assertNotNull(p6SpySqlFormatConfigure);
-
   }
 
 }
