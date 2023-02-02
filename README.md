@@ -88,6 +88,7 @@ MessageFormattingStrategy을 구현한 구현체를 P6Options에 등록해주면
 formatMessage()을 구현해주면 된다.<br>
 전반적인 커스텀 코드는 formatSql(), stackTraceInfo()를 통해 구현하였다.<br>
 이중 stackTraceInfo()는 해당 쿼리를 호출한 call stack이 기본적으로 출력되지 않아 추가하였다.<br>
+
 ------
 - P6Spy: [사이트](https://github.com/p6spy)
 - 참고코드: [사이트](https://www.tabnine.com/code/java/methods/com.p6spy.engine.spy.appender.MessageFormattingStrategy/formatMessage)
