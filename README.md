@@ -1,4 +1,4 @@
-### 사용사항
+### 환경
     - p6spy
     - jdk 17
     - springboot 3.x
